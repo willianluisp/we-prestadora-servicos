@@ -1,0 +1,385 @@
+/*
+  WE PRESTADORA DE SERVIÇOS
+
+  Folha principal de estilos.
+
+  Os estilos estão separados por responsabilidade
+  para facilitar manutenção.
+*/
+
+@import url('./style.css');
+@import url('./animations.css');
+@import url('./header.css');
+@import url('./hero.css');
+@import url('./sections.css');
+@import url('./services.css');
+@import url('./gallery.css');
+@import url('./contact.css');
+@import url('./modal.css');
+@import url('./responsive.css');
+
+
+/* =========================================================
+   HERO — FOTOS REAIS + CARROSSEL
+   ========================================================= */
+
+.hero {
+  position: relative;
+  min-height: min(820px, 92vh);
+  overflow: hidden;
+  isolation: isolate;
+  background: #111;
+}
+
+
+/* Remove os elementos abstratos antigos */
+
+.hero .water-glow,
+.hero .fiber-lines,
+.hero .hero-grid {
+  display: none;
+}
+
+
+/* =========================================================
+   FOTOS DO HERO
+   ========================================================= */
+
+.hero-slides {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  overflow: hidden;
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+
+  opacity: 0;
+  transform: scale(1.015);
+
+  transition:
+    opacity 900ms ease,
+    transform 6500ms ease;
+
+  pointer-events: none;
+}
+
+.hero-slide.active {
+  opacity: 1;
+  transform: scale(1.055);
+}
+
+.hero-slide img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+
+/* =========================================================
+   CAMADA SOBRE AS FOTOS
+   ========================================================= */
+
+/*
+  Deixei menos preta para a foto aparecer mais.
+  O lado esquerdo continua mais escuro para
+  facilitar a leitura do texto.
+*/
+
+.hero-slides::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(8, 9, 10, 0.72) 0%,
+      rgba(8, 9, 10, 0.52) 35%,
+      rgba(8, 9, 10, 0.20) 72%,
+      rgba(8, 9, 10, 0.28) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(8, 9, 10, 0.42) 0%,
+      rgba(8, 9, 10, 0.06) 58%,
+      rgba(8, 9, 10, 0.16) 100%
+    );
+
+  backdrop-filter: blur(1.5px);
+  -webkit-backdrop-filter: blur(1.5px);
+}
+
+
+/* =========================================================
+   CONTEÚDO DO HERO
+   ========================================================= */
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content h1 {
+  max-width: 800px;
+  margin-top: 0;
+}
+
+.hero-content .hero-copy {
+  max-width: 650px;
+  margin-top: 20px;
+}
+
+
+/* =========================================================
+   LOGO DO HERO
+   ========================================================= */
+
+/*
+  Logo menor e mais discreta.
+
+  A imagem deve estar em:
+
+  assets/logos/logo-we.png
+*/
+
+.hero-logo {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+  margin-bottom: 18px;
+}
+
+.hero-logo img {
+  width: 105px;
+  height: auto;
+
+  display: block;
+  object-fit: contain;
+}
+
+
+/* =========================================================
+   BADGE — MAIS DE 35 ANOS
+   ========================================================= */
+
+.hero-badge {
+  margin-top: 22px;
+  margin-bottom: 22px;
+}
+
+
+/* =========================================================
+   BOTÕES DO HERO
+   ========================================================= */
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  margin-top: 28px;
+}
+
+.hero-actions button {
+  transition:
+    transform 200ms ease,
+    opacity 200ms ease;
+}
+
+.hero-actions button:hover {
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   CARROSSEL — CONTROLES
+   ========================================================= */
+
+.hero-slider-ui {
+  position: absolute;
+
+  left: max(
+    24px,
+    calc((100% - 1180px) / 2)
+  );
+
+  bottom: 32px;
+
+  z-index: 4;
+
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+}
+
+
+/* Número 01 / 04 */
+
+.hero-counter {
+  color: rgba(255, 255, 255, 0.78);
+
+  font-size: 12px;
+
+  letter-spacing: 0.12em;
+
+  font-variant-numeric: tabular-nums;
+}
+
+
+/* =========================================================
+   BARRAS DO CARROSSEL
+   ========================================================= */
+
+.hero-dots {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.hero-dot {
+  width: 22px;
+  height: 3px;
+
+  padding: 0;
+  border: 0;
+
+  border-radius: 99px;
+
+  background: rgba(255, 255, 255, 0.35);
+
+  cursor: pointer;
+
+  transition:
+    width 250ms ease,
+    background 250ms ease;
+}
+
+.hero-dot.active {
+  width: 42px;
+  background: #fff;
+}
+
+
+/* =========================================================
+   TEXTO DO CARROSSEL
+   ========================================================= */
+
+.hero-caption {
+  position: absolute;
+
+  right: max(
+    24px,
+    calc((100% - 1180px) / 2)
+  );
+
+  bottom: 32px;
+
+  z-index: 4;
+
+  color: rgba(255, 255, 255, 0.62);
+
+  font-size: 10px;
+
+  letter-spacing: 0.1em;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .hero-logo img {
+    width: 100px;
+  }
+}
+
+
+@media (max-width: 700px) {
+
+  .hero {
+    min-height: 720px;
+  }
+
+
+  /* Fundo um pouco mais escuro no celular */
+
+  .hero-slides::after {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(8, 9, 10, 0.74),
+        rgba(8, 9, 10, 0.38)
+      ),
+      linear-gradient(
+        0deg,
+        rgba(8, 9, 10, 0.48),
+        rgba(8, 9, 10, 0.08) 60%
+      );
+
+    backdrop-filter: blur(1.5px);
+    -webkit-backdrop-filter: blur(1.5px);
+  }
+
+
+  /* Logo */
+
+  .hero-logo {
+    margin-bottom: 16px;
+  }
+
+  .hero-logo img {
+    width: 90px;
+  }
+
+
+  /* Badge */
+
+  .hero-badge {
+    margin-top: 18px;
+    margin-bottom: 18px;
+  }
+
+
+  /* Texto */
+
+  .hero-content .hero-copy {
+    margin-top: 18px;
+  }
+
+
+  /* Botões */
+
+  .hero-actions {
+    margin-top: 24px;
+
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+
+  /* Controles */
+
+  .hero-slider-ui {
+    left: 16px;
+    bottom: 22px;
+  }
+
+
+  /* Esconde legenda lateral */
+
+  .hero-caption {
+    display: none;
+  }
+}

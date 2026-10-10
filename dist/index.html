@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Serviços especializados em fibra de vidro, reforma de piscinas, banheiras, spas, tanques, reservatórios, polietileno e polipropileno."
+  />
+  <meta name="theme-color" content="#0A0A0A" />
+  <link rel="icon" type="image/png" href="assets/logos/FotoLogoSem.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="css/styles.css" />
+  <title>WE Prestadora de Serviços | Fibra, Piscinas, Tanques e Polietileno</title>
+</head>
+<body>
+  <main>
+    <div class="grain"></div>
+    <div class="kinetic-spine"><i id="spine"></i></div>
+
+    <!-- cabeçalho -->
+    <header class="site-header">
+    <button class="brand-button" type="button" data-go="inicio" aria-label="Ir ao início">
+      <div class="hero-logo">
+        <img src="assets/logos/FotoLogoSem.png" alt="WE Prestadora de Serviços" />
+        <span class="brand-text">WE<small>PRESTADORA DE SERVIÇOS LTDA</small></span>
+      </div>
+    </button>
+    <nav class="nav-links" id="nav" aria-label="Navegação principal">
+      <button type="button" data-go="empresa">Empresa</button>
+      <button type="button" data-go="servicos">Serviços</button>
+      <button type="button" data-go="trabalhos">Trabalhos</button>
+      <button type="button" data-go="contato">Contato</button>
+      <button class="nav-cta" type="button" data-quote>Solicitar orçamento</button>
+    </nav>
+    <button
+      class="menu-button"
+      id="menuBtn"
+      type="button"
+      aria-label="Abrir menu"
+      aria-expanded="false"
+      aria-controls="nav"
+    >
+      <i class="fa-solid fa-bars"></i>
+    </button>
+    </header>
+
+    <!-- destaque -->
+    <section id="inicio" class="hero">
+      <!-- Fotos reais dos trabalhos -->
+      <div class="hero-slides" aria-hidden="true">
+        <figure class="hero-slide active">
+          <img src="assets/images/hero/hero-pintura.jpg" alt="" />
+        </figure>
+        <figure class="hero-slide">
+          <img src="assets/images/hero/hero-piscina-1.jpg" alt="" />
+        </figure>
+        <figure class="hero-slide">
+          <img src="assets/images/hero/FotoCamioneteCaixas.jpg" alt="" />
+        </figure>
+        <figure class="hero-slide">
+          <img src="assets/images/hero/hero-piscina-2.jpg" alt="" />
+        </figure>
+        <figure class="hero-slide">
+          <img src="assets/images/hero/hero-camionete.jpg" alt="" />
+        </figure>
+      </div>
+
+    <div class="hero-content">
+      <div class="hero-logo">
+        <img src="assets/logos/FotoLogoSem.png" alt="WE Prestadora de Serviços" />
+      </div>
+
+      <p class="eyebrow">FIBRA • PISCINAS • RECUPERAÇÃO</p>
+      <div class="hero-badge"><i></i> MAIS DE 35 ANOS DE EXPERIÊNCIA</div>
+
+      <h1>EXPERIÊNCIA QUE<br /><span>FAZ A DIFERENÇA.</span></h1>
+
+      <p class="hero-copy">
+        Há mais de 35 anos, recuperando, reformando e fabricando
+        soluções em fibra, plástico e outros materiais.
+      </p>
+
+      <div class="hero-actions">
+        <button class="btn-primary" type="button" data-quote>
+          Solicitar orçamento <i class="fa-solid fa-arrow-right"></i>
+        </button>
+        <button class="btn-ghost" type="button" data-go="servicos">
+          Conheça nossos serviços <i class="fa-solid fa-arrow-down"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="hero-slider-ui" aria-label="Fotos dos trabalhos">
+      <span class="hero-counter"><span id="heroCurrent">01</span> / 05</span>
+
+      <div class="hero-dots">
+        <button class="hero-dot active" type="button" aria-label="Mostrar foto 1"></button>
+        <button class="hero-dot" type="button" aria-label="Mostrar foto 2"></button>
+        <button class="hero-dot" type="button" aria-label="Mostrar foto 3"></button>
+        <button class="hero-dot" type="button" aria-label="Mostrar foto 4"></button>
+        <button class="hero-dot" type="button" aria-label="Mostrar foto 5"></button>
+      </div>
+    </div>
+
+    <div class="hero-caption">Trabalhos realizados pela WE</div>
+  </section>
+
+  <!-- quem somos -->
+  <section id="empresa" class="section about">
+    <span class="section-tag">01 / QUEM SOMOS</span>
+    <div class="about-grid">
+      <div class="reveal"><h2>EXPERIÊNCIA QUE SE TRANSFORMA EM <span>RESULTADO.</span></h2></div>
+      <div class="reveal r-right">
+        <p class="lead">A WE Prestadora de Serviços LTDA atua com soluções especializadas em recuperação, manutenção, reforma e fabricação de peças, trabalhando principalmente com fibra de vidro, piscinas, banheiras, spas, tanques, reservatórios, polietileno e polipropileno.</p>
+        <div class="value-grid" id="valueGrid"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- serviços -->
+  <section id="servicos" class="section services">
+    <div class="section-heading">
+      <div>
+        <p class="section-tag">02 / ESPECIALIDADES</p>
+        <div class="reveal"><h2>NOSSOS<br/><span>SERVIÇOS</span></h2></div>
+      </div>
+      <p>Soluções técnicas para recuperar, proteger, reformar e fabricar com precisão.</p>
+    </div>
+    <div class="services-grid" id="servicesGrid"></div>
+  </section>
+
+  <!-- comparação antes/depois -->
+  <section class="section poly">
+    <div class="reveal">
+      <p class="section-tag">03 / ANTES E DEPOIS</p>
+      <h2>RECUPERAMOS O QUE PARECIA <span>NÃO TER CONSERTO.</span></h2>
+    </div>
+    <div class="poly-grid reveal">
+      <div class="compare" aria-label="Comparação entre antes e depois da recuperação de uma banheira">
+        <div class="compare-base">
+          <img src="assets/images/comparison/banheira-depois.jpg" alt="Banheira de hidromassagem recuperada, com acabamento branco renovado" loading="lazy" />
+        </div>
+        <div class="before-layer" id="beforeLayer">
+          <img src="assets/images/comparison/banheira-antes.jpg" alt="Banheira de hidromassagem antes da recuperação, com interior danificado" loading="lazy" />
+        </div>
+        <span class="before-label">ANTES</span>
+        <span class="after-label">DEPOIS</span>
+        <div class="handle" id="handle"><i class="fa-solid fa-left-right"></i></div>
+        <input aria-label="Comparar antes e depois" type="range" min="5" max="95" value="50" id="slider" />
+      </div>
+      <div class="poly-copy">
+        <p>Recuperação de banheira de hidromassagem, do preparo ao acabamento renovado.</p>
+        <span>BANHEIRAS E SPAS</span><span>RECUPERAÇÃO EM FIBRA</span><span>ACABAMENTO RENOVADO</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- trabalhos -->
+  <section id="trabalhos" class="section work-stages">
+    <p class="section-tag">04 / TRANSFORMAÇÃO</p>
+    <div class="reveal"><h2>ANTES. DURANTE. <span>DEPOIS.</span></h2></div>
+    <p class="section-note">Área preparada para receber os registros reais dos trabalhos da WE.</p>
+    <div class="stage-grid" id="stageGrid"></div>
+  </section>
+
+  <!-- clientes -->
+  <section class="section clients">
+    <div class="reveal">
+      <p class="section-tag">CLIENTES / PARCEIROS</p>
+      <h2>CONFIANÇA DE <span>GRANDES EMPRESAS.</span></h2>
+    </div>
+    <p class="section-note">Empresas que confiaram nos serviços da WE ao longo de mais de 35 anos.</p>
+    <div class="logos-rail"><div class="logos-track" id="logosTrack"></div></div>
+  </section>
+
+  <!-- como trabalhamos -->
+  <section class="section process">
+    <p class="section-tag">05 / MÉTODO</p>
+    <div class="reveal"><h2>COMO <span>TRABALHAMOS</span></h2></div>
+    <div class="process-line" id="processLine"></div>
+  </section>
+
+  <!-- diferenciais -->
+  <section class="section differentials">
+    <p class="section-tag">06 / DIFERENCIAIS</p>
+    <div class="reveal"><h2>POR QUE ESCOLHER <span>A WE?</span></h2></div>
+    <div class="diff-grid" id="diffGrid"></div>
+  </section>
+
+  <!-- portfólio -->
+  <section class="section gallery">
+    <div class="section-heading">
+      <div>
+        <p class="section-tag">07 / PORTFÓLIO</p>
+        <div class="reveal"><h2>NOSSOS <span>TRABALHOS</span></h2></div>
+      </div>
+      <p>Galeria preparada para as fotos reais da empresa.</p>
+    </div>
+    <div class="filters" id="filters"></div>
+    <div class="mosaic" id="mosaic"></div>
+  </section>
+
+  <!-- contato -->
+  <section id="contato" class="quote-section">
+    <div class="quote-orbit"></div>
+    <div class="quote-inner reveal">
+      <p class="section-tag">08 / FALE COM A WE</p>
+      <h2>PRECISA DE<br />UM <span>REPARO?</span></h2>
+      <p class="copy">Conte para nós o que você precisa. Nossa equipe avalia o serviço e encontra a melhor solução.</p>
+      <div class="quote-actions">
+        <button class="btn-primary" type="button" data-quote>
+          Solicitar orçamento <i class="fa-solid fa-arrow-right"></i>
+        </button>
+        <button class="btn-ghost" type="button" data-whats>
+          <i class="fa-brands fa-whatsapp"></i> Chamar no WhatsApp
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- rodapé -->
+  <footer>
+    <div class="footer-top">
+      <div>
+        <button class="brand-button" type="button" data-go="inicio" aria-label="Ir ao início">
+          <img src="assets/logos/FotoLogoSem.png" alt="WE Prestadora de Serviços" />
+        </button>
+        <p>Fibra de vidro, piscinas, tanques, reservatórios, polietileno, polipropileno e soluções sob medida.</p>
+      </div>
+      <div class="contact-grid" id="contactGrid"></div>
+    </div>
+    <div class="footer-bottom">
+      <span>WE PRESTADORA DE SERVIÇOS LTDA</span>
+      <nav>
+        <button type="button" data-go="inicio">Início</button>
+        <button type="button" data-go="empresa">Empresa</button>
+        <button type="button" data-go="servicos">Serviços</button>
+        <button type="button" data-go="trabalhos">Trabalhos</button>
+        <button type="button" data-go="contato">Contato</button>
+      </nav>
+    </div>
+  </footer>
+
+  </main>
+
+  <!-- modal de orçamento -->
+  <div class="modal-backdrop" id="modal">
+    <div class="quote-modal">
+      <button class="modal-close" id="modalClose" type="button" aria-label="Fechar">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div id="formWrap">
+        <p class="section-tag">SOLICITAR ORÇAMENTO</p>
+        <h2>CONTE O QUE<br /><span>PRECISA.</span></h2>
+        <form id="quoteForm" novalidate>
+          <div class="form-grid">
+            <input name="name" aria-label="Nome" placeholder="Nome *" />
+            <input name="phone" aria-label="Telefone ou WhatsApp" placeholder="Telefone / WhatsApp *" />
+            <input name="city" aria-label="Cidade" placeholder="Cidade" />
+            <select name="service" aria-label="Tipo de serviço">
+              <option value="" disabled selected>Tipo de serviço *</option>
+            </select>
+          </div>
+          <textarea name="description" aria-label="Descrição do problema" placeholder="Descreva o problema *"></textarea>
+          <p class="field-error" id="formError">Preencha os campos obrigatórios (*) antes de enviar.</p>
+          <button type="submit" class="btn-primary submit"><i class="fa-brands fa-whatsapp"></i> Enviar pelo WhatsApp</button>
+        </form>
+      </div>
+      <div class="success" id="success">
+        <i class="fa-solid fa-circle-check"></i>
+        <h2>Tudo certo!</h2>
+        <p>Abrimos o WhatsApp com sua solicitação preenchida. É só enviar a mensagem para a equipe WE.</p>
+        <button class="btn-primary" id="successClose" type="button">Fechar</button>
+      </div>
+    </div>
+  </div>
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/features/hero-carousel.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+/* Cabeçalho e navegação */
+/* header */
+.site-header { position:fixed; z-index:80; top:18px; left:50%; transform:translateX(-50%); width:min(1180px,calc(100% - 48px)); height:76px; display:flex; align-items:center; justify-content:space-between; padding:10px 12px 10px 18px; background:#0a0a0ad9; border:1px solid #ffffff1c; border-radius:14px; backdrop-filter:blur(18px); box-shadow:0 20px 60px #0008; }
+.brand-button { border-radius:8px; overflow:hidden; line-height:0; display:flex; align-items:center; gap:12px; }
+.brand-mark { width:44px; height:44px; border-radius:9px; background:var(--we-orange); display:grid; place-items:center; font-family:'Archivo Black'; font-size:20px; color:#0a0a0a; }
+.brand-text { font-family:'Archivo Black'; font-size:15px; line-height:1; letter-spacing:-.03em; text-align:left; }
+.brand-text small { display:block; color:#8b8e8f; font:600 8px 'JetBrains Mono'; letter-spacing:.14em; margin-top:4px; }
+.nav-links { display:flex; align-items:center; gap:28px; }
+.nav-links button { position:relative; color:#c9c9c9; font:600 12px 'JetBrains Mono'; text-transform:uppercase; letter-spacing:.08em; transition:.25s; }
+.nav-links button:hover { color:white; }
+.nav-links .nav-cta { padding:16px 20px; background:var(--we-orange); color:#0a0a0a; border-radius:7px; }
+.menu-button { display:none; padding:12px; font-size:20px; }

@@ -1,0 +1,17 @@
+# Configurações locais do Codex
+.openai/
+
+# Dependências
+node_modules/
+
+# Arquivos sensíveis
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+
+# Arquivos temporários
+.DS_Store
+Thumbs.db

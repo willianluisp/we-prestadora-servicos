@@ -1,0 +1,11 @@
+/* Base, variáveis, reset e elementos globais */
+/* variáveis e base */
+:root { --we-orange:#ff6b00; --we-black:#0a0a0a; --we-slate:#202223; --we-white:#f9f9f9; }
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; background:var(--we-black); }
+body { background:var(--we-black); color:var(--we-white); font-family:'Inter',sans-serif; overflow-x:hidden; }
+button, a { -webkit-tap-highlight-color:transparent; border:0; background:transparent; cursor:pointer; color:inherit; font-family:inherit; text-decoration:none; }
+ul { list-style:none; }
+img { display:block; max-width:100%; }
+h1,h2,h3 { font-family:'Archivo Black',sans-serif; letter-spacing:-.045em; text-transform:uppercase; }
+main { position:relative; overflow:hidden; }

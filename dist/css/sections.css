@@ -1,0 +1,22 @@
+/* Seções principais */
+/* estrutura de seção */
+.section { position:relative; padding:clamp(100px,12vw,180px) max(7vw,54px); }
+.section h2, .quote-section h2 { font-size:clamp(2.7rem,6.4vw,7.2rem); line-height:.9; }
+.section-tag { display:block; margin-bottom:28px; }
+
+/* empresa */
+.about { background:#101112; }
+.about-grid { display:grid; grid-template-columns:1.1fr .9fr; gap:10vw; align-items:start; }
+.about .lead { color:#b9bcbc; font-size:clamp(1.05rem,1.5vw,1.3rem); line-height:1.75; padding-top:12px; }
+.value-grid { display:grid; grid-template-columns:1fr 1fr; margin-top:50px; border-top:1px solid #ffffff20; border-left:1px solid #ffffff20; }
+.value-grid div { display:flex; flex-direction:column; gap:20px; padding:26px; border-right:1px solid #ffffff20; border-bottom:1px solid #ffffff20; }
+.value-grid strong { color:var(--we-orange); font:500 11px 'JetBrains Mono'; }
+.value-grid span { font-family:'Archivo Black'; font-size:clamp(1rem,1.5vw,1.35rem); }
+/* empresa */
+.about { background:#101112; }
+.about-grid { display:grid; grid-template-columns:1.1fr .9fr; gap:10vw; align-items:start; }
+.about .lead { color:#b9bcbc; font-size:clamp(1.05rem,1.5vw,1.3rem); line-height:1.75; padding-top:12px; }
+.value-grid { display:grid; grid-template-columns:1fr 1fr; margin-top:50px; border-top:1px solid #ffffff20; border-left:1px solid #ffffff20; }
+.value-grid div { display:flex; flex-direction:column; gap:20px; padding:26px; border-right:1px solid #ffffff20; border-bottom:1px solid #ffffff20; }
+.value-grid strong { color:var(--we-orange); font:500 11px 'JetBrains Mono'; }
+.value-grid span { font-family:'Archivo Black'; font-size:clamp(1rem,1.5vw,1.35rem); }
