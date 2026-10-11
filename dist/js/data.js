@@ -95,11 +95,11 @@ const servicos = [
     imagem: 'assets/images/gallery/conserto-polietileno-tubulacao.jpeg',
     icone: 'fa-shield-halved',
     titulo: 'Polietileno e polipropileno (PP)',
-    resumo: 'Solda plástica e recuperação estrutural especializada.',
+    resumo: 'Solda plástica e recuperação de tanques, conexões e estruturas em PP e polietileno.',
     destaque: true,
     itens: [
       'Conserto de caixas de polietileno',
-      'Conserto de tanques de PP',
+      'Conserto de tanques de PP, fundo, costuras e conexões hidráulicas',
       'Solda plástica, trincas, furos e vazamentos',
       'Reforço e prolongamento da vida útil'
     ]
@@ -242,5 +242,12 @@ const galeria = [
   { titulo: 'Impermeabilização em fibra', categoria: 'Fibra', descricao: 'Proteção da estrutura com revestimento em fibra de vidro.', arquivo: 'assets/images/gallery/fibra-impermeabilizacao.jpeg' },
   { titulo: 'Equipamentos de piscina', categoria: 'Piscinas', descricao: 'Revisão de componentes hidráulicos para piscinas.', arquivo: 'assets/images/gallery/piscina-equipamentos.jpeg' },
   { titulo: 'Limpeza de reservatório', categoria: 'Tanques', descricao: 'Limpeza técnica para preservar a qualidade da água.', arquivo: 'assets/images/gallery/tanque-limpeza.jpeg' },
-  { titulo: 'Fabricação de peça', categoria: 'Fabricação', descricao: 'Peça fabricada sob medida conforme a necessidade do projeto.', arquivo: 'assets/images/gallery/fabricacao-peca.jpeg' }
+  { titulo: 'Fabricação de peça', categoria: 'Fabricação', descricao: 'Peça fabricada sob medida conforme a necessidade do projeto.', arquivo: 'assets/images/gallery/fabricacao-peca.jpeg' },
+  { titulo: 'Recuperação de tanque em polipropileno', categoria: 'Polipropileno', descricao: 'Reparo externo em tanque de PP com reforço estrutural nas extremidades.', arquivo: 'assets/images/gallery/conserto-tanque-polipropileno-1-1.jpeg' },
+  { titulo: 'Reparo do fundo de tanque em PP', categoria: 'Polipropileno', descricao: 'Recuperação interna do fundo, com revisão das soldas e reforços estruturais.', arquivo: 'assets/images/gallery/conserto-tanque-polipropileno-1-2.jpeg' },
+  { titulo: 'Reforço interno em polipropileno', categoria: 'Polipropileno', descricao: 'Recomposição de costuras e reforços internos para preservar a estrutura do tanque.', arquivo: 'assets/images/gallery/conserto-tanque-polipropileno-1-3.jpeg' },
+  { titulo: 'Reparo de suporte interno em PP', categoria: 'Polipropileno', descricao: 'Recuperação de suporte interno e acabamento das áreas de união no tanque.', arquivo: 'assets/images/gallery/conserto-tanque-polipropileno-1-4.jpeg' },
+  { titulo: 'Recuperação de costura de tanque em PP', categoria: 'Polipropileno', descricao: 'Tratamento e reforço da junção entre fundo e parede do tanque em polipropileno.', arquivo: 'assets/images/gallery/conserto-tanque-polipropileno-1-5.jpeg' },
+  { titulo: 'Vedação de conexão hidráulica em PP', categoria: 'Polipropileno', descricao: 'Reparo e vedação reforçada da saída hidráulica do tanque em polipropileno.', arquivo: 'assets/images/gallery/conserto-tanque-polipropileno-2-1.jpeg' },
+  { titulo: 'Reparo externo de saída em polipropileno', categoria: 'Polipropileno', descricao: 'Recuperação externa da conexão hidráulica e reforço da área de vedação.', arquivo: 'assets/images/gallery/conserto-tanque-polipropileno-2-2.jpeg' }
 ];

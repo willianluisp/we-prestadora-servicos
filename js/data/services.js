@@ -65,11 +65,11 @@ const servicos = [
     n: '06',
     icone: 'fa-shield-halved',
     titulo: 'Polietileno e polipropileno (PP)',
-    resumo: 'Solda plástica e recuperação estrutural especializada.',
+    resumo: 'Solda plástica e recuperação de tanques, conexões e estruturas em PP e polietileno.',
     destaque: true,
     itens: [
       'Conserto de caixas de polietileno',
-      'Conserto de tanques de PP',
+      'Conserto de tanques de PP, fundo, costuras e conexões hidráulicas',
       'Solda plástica, trincas, furos e vazamentos',
       'Reforço e prolongamento da vida útil'
     ]
