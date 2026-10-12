@@ -22,6 +22,18 @@ Desenvolvi este site para apresentar os serviços da WE Prestadora de Serviços 
 - `assets/logos/` — logo da WE e logos de clientes/parceiros.
 - `dist/` — versão pronta para publicação.
 
+## Publicação e SEO técnico
+
+O domínio canônico é `https://www.weservicosfibra.com.br/`. A Vercel deve publicar o conteúdo de `dist/`, que é mantido em sincronia com os arquivos-fonte da raiz.
+
+- `robots.txt` permite o rastreamento público e declara o sitemap.
+- `sitemap.xml` contém somente a página pública canônica atual.
+- Favicons PNG/ICO, ícone Apple e manifest usam a logomarca oficial em tamanhos adequados e sem deformar sua proporção.
+- O HTML contém canonical, Open Graph, Twitter Card e dados estruturados `Organization` e `WebSite` baseados somente nos contatos publicados no projeto.
+- `vercel.json` define cabeçalhos de segurança compatíveis com os recursos externos utilizados.
+
+Após cada alteração de conteúdo, atualize o `lastmod` de `sitemap.xml` com a data real da alteração e replique os arquivos modificados em `dist/` antes da publicação.
+
 ## Como abrir
 
 Basta abrir o arquivo `index.html` no navegador. Para publicar, utilize os arquivos da pasta `dist/`.

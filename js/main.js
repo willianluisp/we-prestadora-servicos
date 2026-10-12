@@ -25,8 +25,8 @@
           <p class="mono-label">SERVIÇO ${s.n}</p>
           <h3>${s.titulo}</h3>
           <p class="desc">${s.resumo}</p>
-          <ul>${s.itens.map(x => `<li>${x}</li>`).join('')}</ul>
-          <button class="more" type="button">Saiba mais <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
+          <ul id="service-details-${s.n}">${s.itens.map(x => `<li>${x}</li>`).join('')}</ul>
+          <button class="more" type="button" aria-expanded="false" aria-controls="service-details-${s.n}">Saiba mais <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
         </div>
       </article>
     </div>`).join('');
@@ -139,6 +139,7 @@
       const lista = botao.parentElement.querySelector('ul');
       const aberto = lista.classList.toggle('details-open');
       botao.closest('.service-card').classList.toggle('is-expanded', aberto);
+      botao.setAttribute('aria-expanded', String(aberto));
       botao.innerHTML = (aberto ? 'Ver menos' : 'Saiba mais') +
         ' <i class="fa-solid fa-arrow-up-right-from-square"></i>';
     });
@@ -201,17 +202,21 @@
   // ---------- MODAL DE ORÇAMENTO ----------
 
   const modal = pega('modal');
+  let acionadorModal = null;
 
-  function abrirModal() {
+  function abrirModal(evento) {
+    acionadorModal = evento?.currentTarget || document.activeElement;
     modal.classList.add('open');
     pega('formWrap').style.display = 'block';
     pega('success').classList.remove('show');
     document.body.style.overflow = 'hidden';
+    pega('quoteForm').name.focus();
   }
 
   function fecharModal() {
     modal.classList.remove('open');
     document.body.style.overflow = '';
+    acionadorModal?.focus();
   }
 
   // monta o link do whatsapp com a mensagem já pronta
@@ -220,7 +225,7 @@
   }
 
   todos('[data-quote]').forEach(b => b.addEventListener('click', abrirModal));
-  todos('[data-whats]').forEach(b => b.addEventListener('click', () => window.open(linkWhats(CONFIG.msgPadrao), '_blank')));
+  todos('[data-whats]').forEach(b => b.addEventListener('click', () => abrirWhats(linkWhats(CONFIG.msgPadrao))));
   pega('modalClose').addEventListener('click', fecharModal);
   pega('successClose').addEventListener('click', fecharModal);
   modal.addEventListener('mousedown', e => { if (e.target === modal) fecharModal(); });
@@ -231,6 +236,11 @@
   const form = pega('quoteForm');
   const erro = pega('formError');
 
+  function abrirWhats(url) {
+    const janela = window.open(url, '_blank', 'noopener,noreferrer');
+    if (janela) janela.opener = null;
+  }
+
   form.addEventListener('submit', e => {
     e.preventDefault();
 
@@ -240,8 +250,9 @@
     const descricao = form.description.value.trim();
 
     // trava se faltar algum campo obrigatório
-    if (!nome || !telefone || !servico || !descricao) {
+    if (!form.checkValidity() || !nome || !telefone || !servico || !descricao) {
       erro.classList.add('show');
+      form.reportValidity();
       return;
     }
     erro.classList.remove('show');
@@ -255,7 +266,7 @@
       `*Serviço:* ${servico}\n` +
       `*Descrição:* ${descricao}`;
 
-    window.open(linkWhats(msg), '_blank');
+    abrirWhats(linkWhats(msg));
     pega('formWrap').style.display = 'none';
     pega('success').classList.add('show');
   });

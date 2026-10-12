@@ -7,8 +7,50 @@
     name="description"
     content="Serviços especializados em fibra de vidro, reforma de piscinas, banheiras, spas, tanques, reservatórios, polietileno e polipropileno."
   />
+  <meta name="robots" content="index,follow" />
   <meta name="theme-color" content="#0A0A0A" />
-  <link rel="icon" type="image/png" href="assets/logos/FotoLogoSem.png" />
+  <link rel="canonical" href="https://www.weservicosfibra.com.br/" />
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <link rel="manifest" href="site.webmanifest" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="WE Prestadora de Serviços" />
+  <meta property="og:title" content="WE Prestadora de Serviços | Fibra, Piscinas, Tanques e Polietileno" />
+  <meta property="og:description" content="Serviços especializados em fibra de vidro, reforma de piscinas, banheiras, spas, tanques, reservatórios, polietileno e polipropileno." />
+  <meta property="og:url" content="https://www.weservicosfibra.com.br/" />
+  <meta property="og:image" content="https://www.weservicosfibra.com.br/assets/logos/FotoLogo.png" />
+  <meta property="og:image:alt" content="Logomarca da WE Prestadora de Serviços" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="WE Prestadora de Serviços | Fibra, Piscinas, Tanques e Polietileno" />
+  <meta name="twitter:description" content="Serviços especializados em fibra de vidro, reforma de piscinas, banheiras, spas, tanques, reservatórios, polietileno e polipropileno." />
+  <meta name="twitter:image" content="https://www.weservicosfibra.com.br/assets/logos/FotoLogo.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.weservicosfibra.com.br/#organization",
+        "name": "WE Prestadora de Serviços LTDA",
+        "url": "https://www.weservicosfibra.com.br/",
+        "logo": "https://www.weservicosfibra.com.br/assets/logos/FotoLogo.png",
+        "description": "Serviços especializados em fibra de vidro, piscinas, tanques, reservatórios, polietileno e polipropileno.",
+        "telephone": "+55-49-98865-9424",
+        "email": "ezquiel-preto@hotmail.com"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.weservicosfibra.com.br/#website",
+        "url": "https://www.weservicosfibra.com.br/",
+        "name": "WE Prestadora de Serviços",
+        "inLanguage": "pt-BR",
+        "publisher": { "@id": "https://www.weservicosfibra.com.br/#organization" }
+      }
+    ]
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -59,7 +101,7 @@
       <!-- Fotos reais dos trabalhos -->
       <div class="hero-slides" aria-hidden="true">
         <figure class="hero-slide active">
-          <img src="assets/images/hero/hero-pintura.jpg" alt="" />
+          <img src="assets/images/hero/hero-pintura.jpg" alt="" fetchpriority="high" />
         </figure>
         <figure class="hero-slide">
           <img src="assets/images/hero/hero-piscina-1.jpg" alt="" />
@@ -137,6 +179,9 @@
       <p>Soluções técnicas para recuperar, proteger, reformar e fabricar com precisão.</p>
     </div>
     <div class="services-grid" id="servicesGrid"></div>
+    <noscript>
+      <p>Serviços: consertos em fibra de vidro; reforma e pintura de piscinas; assistência e instalação de spas; restauração de banheiras; recuperação de caixas d'água, reservatórios e tanques; solda e recuperação de polietileno e polipropileno; revestimentos e impermeabilização; equipamentos de piscinas; limpeza e higienização; fabricação e restauração de peças.</p>
+    </noscript>
   </section>
 
   <!-- comparação antes/depois -->
@@ -255,24 +300,24 @@
 
   <!-- modal de orçamento -->
   <div class="modal-backdrop" id="modal">
-    <div class="quote-modal">
+    <div class="quote-modal" role="dialog" aria-modal="true" aria-labelledby="quoteTitle">
       <button class="modal-close" id="modalClose" type="button" aria-label="Fechar">
         <i class="fa-solid fa-xmark"></i>
       </button>
       <div id="formWrap">
         <p class="section-tag">SOLICITAR ORÇAMENTO</p>
-        <h2>CONTE O QUE<br /><span>PRECISA.</span></h2>
+        <h2 id="quoteTitle">CONTE O QUE<br /><span>PRECISA.</span></h2>
         <form id="quoteForm" novalidate>
           <div class="form-grid">
-            <input name="name" aria-label="Nome" placeholder="Nome *" />
-            <input name="phone" aria-label="Telefone ou WhatsApp" placeholder="Telefone / WhatsApp *" />
+            <input name="name" aria-label="Nome" autocomplete="name" placeholder="Nome *" required aria-describedby="formError" />
+            <input name="phone" type="tel" aria-label="Telefone ou WhatsApp" autocomplete="tel" placeholder="Telefone / WhatsApp *" required aria-describedby="formError" />
             <input name="city" aria-label="Cidade" placeholder="Cidade" />
-            <select name="service" aria-label="Tipo de serviço">
+            <select name="service" aria-label="Tipo de serviço" required aria-describedby="formError">
               <option value="" disabled selected>Tipo de serviço *</option>
             </select>
           </div>
-          <textarea name="description" aria-label="Descrição do problema" placeholder="Descreva o problema *"></textarea>
-          <p class="field-error" id="formError">Preencha os campos obrigatórios (*) antes de enviar.</p>
+          <textarea name="description" aria-label="Descrição do problema" placeholder="Descreva o problema *" required aria-describedby="formError"></textarea>
+          <p class="field-error" id="formError" role="alert">Preencha os campos obrigatórios (*) antes de enviar.</p>
           <button type="submit" class="btn-primary submit"><i class="fa-brands fa-whatsapp"></i> Enviar pelo WhatsApp</button>
         </form>
       </div>
