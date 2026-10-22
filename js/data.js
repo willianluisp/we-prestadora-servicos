@@ -30,10 +30,11 @@ const servicos = [
     imagem: 'assets/images/services/servico-01-tanque.jpeg',
     icone: 'fa-layer-group',
     titulo: 'Consertos de fibra em geral',
-    resumo: 'Reparos, laminação, reforço e fabricação em fibra de vidro.',
+    resumo: 'Reparos, laminação, instalação de tubulações, reforço e fabricação de peças em fibra de vidro.',
     itens: [
       'Reparo de trincas, furos, infiltrações e bolhas',
       'Laminação e reforço estrutural',
+      'Instalação de tubulações de fibra de vidro',
       'Fabricação de moldes e peças sob medida',
       'Revestimento de caixas, tanques e reservatórios'
     ]
@@ -249,5 +250,14 @@ const galeria = [
   { titulo: 'Reparo de suporte interno em PP', categoria: 'Polipropileno', descricao: 'Recuperação de suporte interno e acabamento das áreas de união no tanque.', arquivo: 'assets/images/gallery/conserto-tanque-polipropileno-1-4.jpeg' },
   { titulo: 'Recuperação de costura de tanque em PP', categoria: 'Polipropileno', descricao: 'Tratamento e reforço da junção entre fundo e parede do tanque em polipropileno.', arquivo: 'assets/images/gallery/conserto-tanque-polipropileno-1-5.jpeg' },
   { titulo: 'Vedação de conexão hidráulica em PP', categoria: 'Polipropileno', descricao: 'Reparo e vedação reforçada da saída hidráulica do tanque em polipropileno.', arquivo: 'assets/images/gallery/conserto-tanque-polipropileno-2-1.jpeg' },
-  { titulo: 'Reparo externo de saída em polipropileno', categoria: 'Polipropileno', descricao: 'Recuperação externa da conexão hidráulica e reforço da área de vedação.', arquivo: 'assets/images/gallery/conserto-tanque-polipropileno-2-2.jpeg' }
+  { titulo: 'Reparo externo de saída em polipropileno', categoria: 'Polipropileno', descricao: 'Recuperação externa da conexão hidráulica e reforço da área de vedação.', arquivo: 'assets/images/gallery/conserto-tanque-polipropileno-2-2.jpeg' },
+  { titulo: 'Isolamento em fibra em caixa d’água potável', categoria: 'Fibra', descricao: 'Isolamento em fibra realizado no interior de caixa d’água potável.', alt: 'Interior de caixa d’água potável com isolamento azul em fibra.', arquivo: 'assets/images/gallery/isolamento-fibra-caixa-agua-potavel.jpeg' },
+  { titulo: 'Revestimento em fibra de piscina', categoria: 'Piscinas', descricao: 'Revestimento em fibra aplicado em piscina, com acabamento azul.', alt: 'Piscina vazia com revestimento azul em fibra.', arquivo: 'assets/images/gallery/revestimento-fibra-piscina.jpeg' },
+  { titulo: 'Reparo em toboágua — estrutura de descida', categoria: 'Piscinas', descricao: 'Toboágua após reparo e recuperação da superfície de descida.', alt: 'Estrutura de descida de toboágua após reparo.', arquivo: 'assets/images/gallery/reparo-toboagua-estrutura.jpeg' },
+  { titulo: 'Reparo em toboágua — vista da curva', categoria: 'Piscinas', descricao: 'Toboágua recuperado em área de piscina, visto a partir da curva.', alt: 'Curva azul de toboágua recuperado em área de piscina.', arquivo: 'assets/images/gallery/reparo-toboagua-curva.jpeg' },
+  { titulo: 'Revitalização com polimento de piscina', categoria: 'Piscinas', descricao: 'Piscina durante revitalização com polimento da superfície.', alt: 'Piscina durante serviço de revitalização e polimento.', arquivo: 'assets/images/gallery/revitalizacao-piscina-polimento.jpeg' },
+  { titulo: 'Polimento e revitalização de piscina', categoria: 'Piscinas', descricao: 'Piscina revitalizada com acabamento azul uniforme.', alt: 'Piscina vazia após polimento e revitalização, com acabamento azul.', arquivo: 'assets/images/gallery/polimento-piscina-revitalizacao.jpeg' },
+  { titulo: 'Revestimento em fibra em caixa de contenção', categoria: 'Fibra', descricao: 'Caixa de contenção com revestimento em fibra aplicado internamente.', alt: 'Caixa de contenção com revestimento interno em fibra.', arquivo: 'assets/images/gallery/revestimento-fibra-caixa-contencao.jpeg' },
+  { titulo: 'Conserto de tampa de sistema de tratamento', categoria: 'Fibra', descricao: 'Tampa de sistema de tratamento durante conserto e recuperação.', alt: 'Tampa circular de sistema de tratamento durante conserto.', arquivo: 'assets/images/gallery/conserto-tampa-sistema-tratamento.jpeg' },
+  { titulo: 'Restauração e pintura de banheira', categoria: 'Banheiras', descricao: 'Banheira de hidromassagem em processo de restauração e pintura.', alt: 'Banheira de hidromassagem com dano visível durante restauração.', arquivo: 'assets/images/gallery/restauracao-pintura-banheira.jpeg' }
 ];

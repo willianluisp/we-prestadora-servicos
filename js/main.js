@@ -80,15 +80,18 @@
 
   // ---------- GALERIA ----------
 
+  let itensGaleriaVisiveis = galeria;
+
   function montarGaleria(lista) {
+    itensGaleriaVisiveis = lista;
     pega('mosaic').innerHTML = lista.length
       ? lista.map((item, i) => `
-          <div class="mosaic-slot${item.destaque ? ' is-featured' : ''}${item.amplo ? ' is-wide' : ''}">
-            <img src="${item.arquivo}" alt="${item.titulo}" loading="lazy" />
+          <button class="mosaic-slot gallery-trigger${item.destaque ? ' is-featured' : ''}${item.amplo ? ' is-wide' : ''}" type="button" data-gallery-index="${i}" aria-label="Ampliar fotografia: ${item.titulo}">
+            <img src="${item.arquivo}" alt="${item.alt || item.titulo}" loading="lazy" />
             <span>${item.titulo}</span>
             ${item.descricao ? `<small class="gallery-description">${item.descricao}</small>` : ''}
             <small>${item.categoria.toUpperCase()}</small>
-          </div>`).join('')
+          </button>`).join('')
       : '<p class="empty-filter">As imagens desta categoria serão adicionadas em breve.</p>';
   }
 
@@ -103,6 +106,106 @@
     botao.classList.add('active');
     const cat = botao.dataset.cat;
     montarGaleria(cat === 'Todos' ? galeria : galeria.filter(item => item.categoria === cat));
+  });
+
+  // ---------- VISUALIZAÇÃO DA GALERIA ----------
+
+  const modalGaleria = pega('galleryModal');
+  const imagemModalGaleria = pega('galleryModalImage');
+  const tituloModalGaleria = pega('galleryModalTitle');
+  const descricaoModalGaleria = pega('galleryModalDescription');
+  const categoriaModalGaleria = pega('galleryModalCategory');
+  const atualModalGaleria = pega('galleryModalCurrent');
+  const totalModalGaleria = pega('galleryModalTotal');
+  const fecharModalGaleriaBotao = pega('galleryModalClose');
+  const anteriorModalGaleria = pega('galleryModalPrevious');
+  const proximoModalGaleria = pega('galleryModalNext');
+  let indiceGaleria = 0;
+  let acionadorGaleria = null;
+  let inicioGestoGaleria = null;
+
+  function atualizarModalGaleria() {
+    const item = itensGaleriaVisiveis[indiceGaleria];
+    if (!item) return;
+
+    imagemModalGaleria.src = item.arquivo;
+    imagemModalGaleria.alt = item.alt || item.titulo;
+    tituloModalGaleria.textContent = item.titulo;
+    descricaoModalGaleria.textContent = item.descricao || '';
+    categoriaModalGaleria.textContent = item.categoria.toUpperCase();
+    atualModalGaleria.textContent = String(indiceGaleria + 1).padStart(2, '0');
+    totalModalGaleria.textContent = String(itensGaleriaVisiveis.length).padStart(2, '0');
+  }
+
+  function abrirModalGaleria(indice, acionador) {
+    indiceGaleria = indice;
+    acionadorGaleria = acionador;
+    atualizarModalGaleria();
+    modalGaleria.classList.add('open');
+    modalGaleria.setAttribute('aria-hidden', 'false');
+    document.querySelector('main').inert = true;
+    modal.inert = true;
+    document.body.style.overflow = 'hidden';
+    fecharModalGaleriaBotao.focus();
+  }
+
+  function fecharModalGaleria() {
+    if (!modalGaleria.classList.contains('open')) return;
+    modalGaleria.classList.remove('open');
+    modalGaleria.setAttribute('aria-hidden', 'true');
+    document.querySelector('main').inert = false;
+    modal.inert = false;
+    document.body.style.overflow = '';
+    acionadorGaleria?.focus();
+  }
+
+  function navegarGaleria(direcao) {
+    indiceGaleria = (indiceGaleria + direcao + itensGaleriaVisiveis.length) % itensGaleriaVisiveis.length;
+    atualizarModalGaleria();
+  }
+
+  function manterFocoNoModalGaleria(evento) {
+    if (evento.key !== 'Tab' || !modalGaleria.classList.contains('open')) return;
+    const elementos = todos('#galleryModal button:not([disabled])');
+    const primeiro = elementos[0];
+    const ultimo = elementos[elementos.length - 1];
+
+    if (evento.shiftKey && document.activeElement === primeiro) {
+      evento.preventDefault();
+      ultimo.focus();
+    } else if (!evento.shiftKey && document.activeElement === ultimo) {
+      evento.preventDefault();
+      primeiro.focus();
+    }
+  }
+
+  pega('mosaic').addEventListener('click', evento => {
+    const acionador = evento.target.closest('.gallery-trigger');
+    if (!acionador) return;
+    abrirModalGaleria(Number(acionador.dataset.galleryIndex), acionador);
+  });
+
+  fecharModalGaleriaBotao.addEventListener('click', fecharModalGaleria);
+  anteriorModalGaleria.addEventListener('click', () => navegarGaleria(-1));
+  proximoModalGaleria.addEventListener('click', () => navegarGaleria(1));
+  modalGaleria.addEventListener('click', evento => { if (evento.target === modalGaleria) fecharModalGaleria(); });
+  modalGaleria.addEventListener('pointerdown', evento => {
+    if (evento.pointerType !== 'mouse') inicioGestoGaleria = { x: evento.clientX, y: evento.clientY };
+  });
+  modalGaleria.addEventListener('pointerup', evento => {
+    if (!inicioGestoGaleria) return;
+    const deslocamentoX = evento.clientX - inicioGestoGaleria.x;
+    const deslocamentoY = evento.clientY - inicioGestoGaleria.y;
+    inicioGestoGaleria = null;
+    if (Math.abs(deslocamentoX) < 48 || Math.abs(deslocamentoX) <= Math.abs(deslocamentoY)) return;
+    navegarGaleria(deslocamentoX < 0 ? 1 : -1);
+  });
+  window.addEventListener('keydown', evento => {
+    if (!modalGaleria.classList.contains('open')) return;
+    if (evento.key === 'Escape') fecharModalGaleria();
+    if (evento.key === 'ArrowLeft') { evento.preventDefault(); navegarGaleria(-1); }
+    if (evento.key === 'ArrowRight') { evento.preventDefault(); navegarGaleria(1); }
+    manterFocoNoModalGaleria(evento);
   });
 
   montarGaleria(galeria);
@@ -229,7 +332,7 @@
   pega('modalClose').addEventListener('click', fecharModal);
   pega('successClose').addEventListener('click', fecharModal);
   modal.addEventListener('mousedown', e => { if (e.target === modal) fecharModal(); });
-  window.addEventListener('keydown', e => { if (e.key === 'Escape') fecharModal(); });
+  window.addEventListener('keydown', e => { if (e.key === 'Escape' && modal.classList.contains('open')) fecharModal(); });
 
   // ---------- ENVIO DO FORMULÁRIO ----------
 
